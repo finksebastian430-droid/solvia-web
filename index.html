@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLVIA S.R.L. | Urbanizaciones Autosustentables e Instalaciones Electromecánicas</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00D2FF',
+                            blue: '#0082C8',
+                            darkBlue: '#0A192F',
+                            silver: '#E2E8F0',
+                            darkSilver: '#334155',
+                            metallic: '#0F172A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #00D2FF 0%, #0082C8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #00D2FF 0%, #0082C8 100%);
+        }
+        .hero-pattern {
+            background-color: #0F172A;
+            background-image: radial-gradient(#00D2FF 0.75px, transparent 0.75px), radial-gradient(#0082C8 0.75px, #0F172A 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.15;
+        }
+        .card-glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- NAV BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center shadow-lg shadow-cyan-500/30 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-sun text-slate-950 text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-wider text-white">SOLVIA <span class="text-cyan-400 text-sm font-semibold">S.R.L.</span></span>
+                        <p class="text-[10px] text-slate-400 tracking-widest uppercase hidden sm:block">Electromecánica & Sustentabilidad</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#inicio" class="text-slate-300 hover:text-cyan-400 transition-colors">Inicio</a>
+                    <a href="#nosotros" class="text-slate-300 hover:text-cyan-400 transition-colors">Nosotros</a>
+                    <a href="#servicios" class="text-slate-300 hover:text-cyan-400 transition-colors">Servicios</a>
+                    <a href="#proyectos" class="text-slate-300 hover:text-cyan-400 transition-colors">Proyectos</a>
+                    <a href="#equipo" class="text-slate-300 hover:text-cyan-400 transition-colors">Equipo</a>
+                    <a href="#contacto" class="text-slate-300 hover:text-cyan-400 transition-colors">Contacto</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contacto" class="gradient-bg text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-105 transition-all duration-300 text-sm">
+                        Solicitar Cotización
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Abrir Menú">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Inicio</a>
+            <a href="#nosotros" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Nosotros</a>
+            <a href="#servicios" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Servicios</a>
+            <a href="#proyectos" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Proyectos</a>
+            <a href="#equipo" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Equipo</a>
+            <a href="#contacto" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Contacto</a>
+            <a href="#contacto" class="inline-block w-full text-center gradient-bg text-slate-950 font-bold py-2.5 rounded-xl text-sm mt-2">
+                Solicitar Cotización
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center hero-pattern overflow-hidden">
+        <!-- Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-cyan-500/30 px-4 py-2 rounded-full mb-8 backdrop-blur-md">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="text-xs font-semibold text-cyan-300 uppercase tracking-wider">Comodoro Rivadavia • Chubut</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Construyendo hogares seguros,<br class="hidden sm:inline"> 
+                <span class="gradient-text">impulsando energía sustentable.</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-slate-400 mb-10 font-normal leading-relaxed">
+                Especialistas en soluciones habitacionales integrales y montaje de sistemas electromecánicos automatizados: energía solar fotovoltaica, riego eficiente y control de accesos.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contacto" class="w-full sm:w-auto gradient-bg text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 transition-all duration-300 text-center text-base">
+                    <i class="fa-solid fa-calculator mr-2"></i> Solicitar Presupuesto
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-slate-800/80 hover:bg-slate-700 text-white font-semibold px-8 py-4 rounded-xl border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 text-center text-base">
+                    <i class="fa-solid fa-gears mr-2"></i> Ver Servicios
+                </a>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-10 border-t border-slate-800/80">
+                <div class="p-4 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <span class="text-3xl lg:text-4xl font-extrabold text-cyan-400">100%</span>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Energía Limpia e Integrada</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <span class="text-3xl lg:text-4xl font-extrabold text-cyan-400">0%</span>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Tasa de Accidentabilidad</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <span class="text-3xl lg:text-4xl font-extrabold text-cyan-400">30%</span>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Ahorro Eficiente de Agua</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-slate-900/50 border border-slate-800">
+                    <span class="text-3xl lg:text-4xl font-extrabold text-cyan-400">5 Años</span>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Plan de Expansión Patagónico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="nosotros" class="py-24 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Marco Institucional</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Compromiso Técnico y Responsabilidad Social</h3>
+                <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <!-- Misión -->
+                <div class="p-8 rounded-3xl card-glass border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">Nuestra Misión</h4>
+                        <p class="text-slate-300 leading-relaxed">
+                            Somos una empresa dedicada a la construcción de viviendas y al montaje de sistemas electromecánicos (paneles solares, riego automático y portones automatizados) en Comodoro Rivadavia. Nuestro propósito es brindar soluciones habitacionales e instalaciones de alta calidad, garantizando la seguridad de los trabajadores, la eficiencia energética y el cuidado del medio ambiente.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-slate-800 text-xs text-slate-400 flex items-center">
+                        <i class="fa-solid fa-shield-halved text-cyan-400 mr-2"></i> Cumplimiento estricto Ley N° 19.587 y Normas AEA
+                    </div>
+                </div>
+
+                <!-- Visión -->
+                <div class="p-8 rounded-3xl card-glass border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">Nuestra Visión</h4>
+                        <p class="text-slate-300 leading-relaxed">
+                            Aspiramos a consolidarnos en el futuro como la empresa líder en la región patagónica en el desarrollo de urbanizaciones sustentables e integración de tecnologías electromecánicas automatizadas, siendo reconocidos por la innovación, la responsabilidad social y la excelencia técnica.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-slate-800 text-xs text-slate-400 flex items-center">
+                        <i class="fa-solid fa-chart-line text-cyan-400 mr-2"></i> Proyección de crecimiento a 5 años en Chubut
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metas Cuantificables -->
+            <div class="mt-16 p-8 rounded-3xl bg-slate-950 border border-slate-800">
+                <h4 class="text-xl font-bold text-white mb-8 text-center flex items-center justify-center">
+                    <i class="fa-solid fa-list-check text-cyan-400 mr-3"></i> Metas Estratégicas a 5 Años
+                </h4>
+                <div class="grid gap-4 md:grid-cols-5">
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800/80">
+                        <span class="text-xs font-bold text-cyan-400 block mb-1">AÑO 1</span>
+                        <p class="text-xs text-slate-300">Ejecución del 100% en barrio Cerro Hermite con 0% accidentes.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800/80">
+                        <span class="text-xs font-bold text-cyan-400 block mb-1">AÑO 2</span>
+                        <p class="text-xs text-slate-300">100% de alumbrado público común impulsado por energía solar.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800/80">
+                        <span class="text-xs font-bold text-cyan-400 block mb-1">AÑO 3</span>
+                        <p class="text-xs text-slate-300">Certificación ISO 9001 e ISO 45001 en todos los procesos.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800/80">
+                        <span class="text-xs font-bold text-cyan-400 block mb-1">AÑO 4</span>
+                        <p class="text-xs text-slate-300">Reducción del 30% en consumo de agua con riego automatizado.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800/80">
+                        <span class="text-xs font-bold text-cyan-400 block mb-1">AÑO 5</span>
+                        <p class="text-xs text-slate-300">Construcción de al menos 5 urbanizaciones autosustentables en Chubut.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS ELECTROMECÁNICOS -->
+    <section id="servicios" class="py-24 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Especialidades Técnicas</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Sistemas Electromecánicos Automatizados</h3>
+                <p class="text-slate-400 mt-4">Soluciones modernas diseñadas para optimizar el consumo energético y elevar el confort urbano.</p>
+                <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="group p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-900/80 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-solar-panel"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Paneles Solares Fotovoltaicos</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Instalación y dimensionamiento de sistemas fotovoltaicos on-grid y off-grid para viviendas y espacios comunales. Generación de energía limpia y reducción de huella de carbono.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Inversores de alta eficiencia</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Autonomía y energía autosustentable</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="group p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-900/80 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-faucet-drip"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Sistemas de Riego Automatizado</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Montaje de red de riego inteligente controlada por temporizadores electromecánicos y sensores de humedad. Optimización precisa del uso de agua potable en áreas verdes.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Programación por sectores y horarios</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Electroválvulas de alta durabilidad</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="group p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-900/80 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-3xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-door-open"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Portones Automatizados</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Automatización de portones corredizos y levadizos con motores electromecánicos de respuesta rápida. Seguridad, control remoto de accesos e integración con barreras de seguridad.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Control a distancia y fotocélulas</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i> Sistema de desenganche manual de emergencia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTO DESTACADO -->
+    <section id="proyectos" class="py-24 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="p-8 lg:p-12 rounded-3xl bg-gradient-to-br from-slate-950 to-slate-900 border border-cyan-500/30 relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase mb-4">
+                            Proyecto Insignia
+                        </span>
+                        <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">
+                            Relocalización y Urbanización Cerro Hermite
+                        </h3>
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            Desarrollo e integración electromecánica para el nuevo complejo habitacional destinado a las familias reubicadas del sector afectado por deslizamientos en el Cerro Hermite, Comodoro Rivadavia.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-house-chimney-window text-cyan-400 text-lg mt-1 mr-4"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-sm">Viviendas Autosustentables</h5>
+                                    <p class="text-slate-400 text-xs">Unidades habitacionales equipadas con tecnología eficiente.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-bolt text-cyan-400 text-lg mt-1 mr-4"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-sm">Energía Fotovoltaica Integrada</h5>
+                                    <p class="text-slate-400 text-xs">Paneles solares para autoconsumo y red común.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-shield-cat text-cyan-400 text-lg mt-1 mr-4"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-sm">Seguridad y Automatismo</h5>
+                                    <p class="text-slate-400 text-xs">Accesos automatizados y riego programado en espacios comunitarios.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 text-center">
+                        <div class="aspect-video rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 mb-4">
+                            <i class="fa-solid fa-city text-5xl text-cyan-400 mb-3 animate-bounce"></i>
+                            <span class="text-sm font-semibold text-white">Comodoro Rivadavia • Zona Sur</span>
+                            <span class="text-xs text-slate-400">Urbanización de Alta Seguridad Geotécnica</span>
+                        </div>
+                        <div class="text-left text-xs text-slate-400 space-y-1">
+                            <p><strong class="text-slate-200">Ubicación Empresa:</strong> Carlos Pellegrini 927, Centro</p>
+                            <p><strong class="text-slate-200">Normativa Aplicada:</strong> AEA 90364 & Ley N° 19.587</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO DIRECTIVO / ORGANIGRAMA -->
+    <section id="equipo" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Organigrama Institucional</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Equipo Directivo y Áreas Operativas</h3>
+                <p class="text-slate-400 mt-4">Profesionales al frente de la conducción técnica, administrativa y de seguridad de SOLVIA S.R.L.</p>
+                <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Fink Sebastián -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-center hover:border-cyan-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full gradient-bg flex items-center justify-center text-slate-950 text-2xl font-black mb-4">
+                        SF
+                    </div>
+                    <h4 class="text-base font-bold text-white">Fink, Sebastián</h4>
+                    <p class="text-xs text-cyan-400 font-semibold mt-1">Gerencia General</p>
+                    <p class="text-[11px] text-slate-400 mt-2">Dirección ejecutiva y coordinación general del proyecto.</p>
+                </div>
+
+                <!-- Chacoma Thiago -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-center hover:border-cyan-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-800 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl font-black mb-4">
+                        TC
+                    </div>
+                    <h4 class="text-base font-bold text-white">Chacoma, Thiago</h4>
+                    <p class="text-xs text-cyan-400 font-semibold mt-1">Montaje e Infraestructura</p>
+                    <p class="text-[11px] text-slate-400 mt-2">Diseño técnico y dirección de obras en campo.</p>
+                </div>
+
+                <!-- Cayupel Santiago -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-center hover:border-cyan-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-800 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl font-black mb-4">
+                        SC
+                    </div>
+                    <h4 class="text-base font-bold text-white">Cayupel, Santiago</h4>
+                    <p class="text-xs text-cyan-400 font-semibold mt-1">Seguridad y Legales</p>
+                    <p class="text-[11px] text-slate-400 mt-2">Higiene laboral (Ley 19.587) y contratos normativos.</p>
+                </div>
+
+                <!-- Vega Damián -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-center hover:border-cyan-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-800 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl font-black mb-4">
+                        DV
+                    </div>
+                    <h4 class="text-base font-bold text-white">Vega, Damián</h4>
+                    <p class="text-xs text-cyan-400 font-semibold mt-1">Finanzas y Cómputos</p>
+                    <p class="text-[11px] text-slate-400 mt-2">Presupuestos, costos y cómputos métricos de obra.</p>
+                </div>
+
+                <!-- Moraes Leonel -->
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-center hover:border-cyan-500/50 transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-800 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl font-black mb-4">
+                        LM
+                    </div>
+                    <h4 class="text-base font-bold text-white">Moraes, Leonel</h4>
+                    <p class="text-xs text-cyan-400 font-semibold mt-1">RRHH y Marketing</p>
+                    <p class="text-[11px] text-slate-400 mt-2">Gestión de personal y comunicación institucional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section id="contacto" class="py-24 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Atención Comercial</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">Contacto e Información Institucional</h3>
+                <p class="text-slate-400 mt-4">Comuníquese con nuestras oficinas para consultas, cotizaciones o solicitud de proyectos.</p>
+                <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Información de contacto -->
+                <div class="space-y-6">
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-base">Dirección Comercial</h5>
+                            <p class="text-slate-300 text-sm mt-1">Carlos Pellegrini 927, Centro</p>
+                            <p class="text-slate-400 text-xs">Comodoro Rivadavia, Chubut, Argentina (U9000)</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-base">Teléfono Directo</h5>
+                            <p class="text-slate-300 text-sm mt-1">+54 9 297 403-8855</p>
+                            <p class="text-slate-400 text-xs">Atención de Lunes a Viernes de 8:00 a 17:00 hs.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-base">Correo Electrónico</h5>
+                            <p class="text-slate-300 text-sm mt-1">contacto@solviasrl.com.ar</p>
+                            <p class="text-slate-400 text-xs">Web Oficial: www.solviasrl.com.ar</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl flex-shrink-0">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-base">Redes Sociales</h5>
+                            <p class="text-slate-300 text-sm mt-1">@solvia.srl</p>
+                            <p class="text-slate-400 text-xs">Novedades y seguimiento de obras en tiempo real.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de Contacto -->
+                <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800">
+                    <h4 class="text-xl font-bold text-white mb-6">Solicitud de Cotización</h4>
+                    
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Nombre Completo</label>
+                            <input type="text" required placeholder="Ej: Juan Pérez" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Teléfono</label>
+                                <input type="tel" required placeholder="297XXXXXXX" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Email</label>
+                                <input type="email" required placeholder="usuario@email.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Servicio de Interés</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 focus:outline-none focus:border-cyan-500 text-sm">
+                                <option>Paneles Solares Fotovoltaicos</option>
+                                <option>Sistemas de Riego Automatizado</option>
+                                <option>Portones Automatizados</option>
+                                <option>Proyecto de Urbanización Completa</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Mensaje o Consulta</label>
+                            <textarea rows="4" required placeholder="Describa los detalles de su requerimiento..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full gradient-bg text-slate-950 font-bold py-3.5 rounded-xl hover:shadow-lg hover:shadow-cyan-500/30 transition-all text-sm">
+                            Enviar Solicitud
+                        </button>
+                    </form>
+
+                    <!-- Custom Message Box Notification -->
+                    <div id="form-alert" class="hidden mt-4 p-4 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs text-center">
+                        <i class="fa-solid fa-circle-check mr-2"></i> Mensaje enviado correctamente. Un representante de SOLVIA S.R.L. lo contactará a la brevedad.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div>
+                    <a href="#" class="text-xl font-extrabold text-white">SOLVIA <span class="text-cyan-400">S.R.L.</span></a>
+                    <p class="text-xs text-slate-400 mt-1">"Construyendo hogares seguros, impulsando energía sustentable."</p>
+                </div>
+                <div class="text-xs text-slate-500">
+                    &copy; 2026 SOLVIA S.R.L. Todos los derechos reservados. Comodoro Rivadavia, Chubut.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Logic -->
+    <script>
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submit Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('form-alert');
+            const form = document.getElementById('contact-form');
+            
+            alertBox.classList.remove('hidden');
+            form.reset();
+
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
